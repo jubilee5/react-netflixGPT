@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
+import { checkvalidData } from "../utils/validate";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
+    const [errorMessage, setErrorMessage] = useState(null);
+
+    const name = useRef(null) 
+    const email = useRef(null)
+    const password = useRef(null)
+
+    const handleButtonClick = () => {
+        // validate form data
+    const message =   checkvalidData(name.current.value, email.current.value, password.current.value);
+    setErrorMessage(message);
+    }
 
     const toggleSignInForm = () => {
         setIsSignInForm(!isSignInForm);
@@ -17,34 +29,40 @@ const Login = () => {
         src= "https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_large.jpg" alt="backgroung"
         />
       </div>
-      <form className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-75">
+      <form onSubmit={(e) => e.preventDefault()}  //e.preventDefault() is used to prevent the default form submission behavior. 
+      className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-75">
       <h1 className="font-bold text-3xl py-4">
         {isSignInForm? "Sign In" : "Sign Up"}</h1>
         {!isSignInForm && (      //show fullname field only if the form is not Sign In
-         <input 
+         <input
+               ref = {name}
                type = "text" 
                placeholder = "Full Name" 
                className="p-4 my-4 w-full bg-gray-800" />
         )} 
         {!isSignInForm && (      //show fullname field only if the form is not Sign In
          <input 
+               
                type = "tel" 
                placeholder = "Mobile Number" 
                className="p-4 my-4 w-full bg-gray-800" />
         )}            
       <input 
+           ref = {email}
             type = "text" 
-            placeholder = "Email Address" 
+            placeholder = "Email Address"   
             className="p-4 my-4 w-full bg-gray-800" />
 
       <input 
+            ref = {password}
             type = "Password"
             placeholder = "Password" 
             className="p-4 my-4 w-full bg-gray-800" />
+      <p className="text-red-800 font-bold text-lg">{errorMessage}</p>
       <button
-            className="p-4 my-6 bg-red-700 w-full rounded-lg">{isSignInForm? "Sign In" : "Sign Up"}
+            className="p-4 my-6 bg-red-700 w-full rounded-lg" onClick={handleButtonClick}>{isSignInForm? "Sign In" : "Sign Up"}
      </button>
-      <p className="py-4 cursor-pointer"
+      <p className="py-4 cursor-pointer" 
              onClick={toggleSignInForm}>{isSignInForm? "New to Netflix? Sign Up Now" : "Already Registered? Sign In Now"}
         </p>
       </form>
