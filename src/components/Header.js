@@ -1,6 +1,19 @@
-
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../utils/firebase";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const handleSignOut = () => {
+    signOut(auth)           //took this code from firebase docs
+    .then(() => {
+  // Sign-out successful.
+      navigate("/");
+}).catch((error) => {
+  // An error happened.
+  navigate("/error");
+});
+  }
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex  justify-between">  
     <img 
@@ -14,7 +27,7 @@ const Header = () => {
       alt="userIcon"
       src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
       />    
-      <button>(Sign Out)</button>
+      <button onClick={handleSignOut} className="font-bold text-white">(Sign Out)</button>
       </div>
     </div>
   )
