@@ -38,7 +38,7 @@ const Login = () => {
     const user = userCredential.user;
     updateProfile(user, {             //took this code from firebase docs
       displayName: name.current.value,
-       photoURL: {USER_AVATAR}
+       photoURL: USER_AVATAR
       }).then(() => {
         const {uid, email, displayName, photoURL} = auth; 
         dispatch
@@ -90,7 +90,7 @@ const Login = () => {
 
       <img
         className="w-screen h-screen object-cover"
-        src= "https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_large.jpg" alt="backgroung"
+        src= "https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_large.jpg" alt="background"
         />
       </div>
       <form onSubmit={(e) => e.preventDefault()}  //e.preventDefault() is used to prevent the default form submission behavior. 
