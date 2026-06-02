@@ -6,7 +6,8 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constants";
+//import { LOGO } from "../utils/constants";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -47,8 +48,8 @@ const Header = () => {
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex  justify-between">  
     <img 
-    className="w-44  "
-    src = {LOGO} 
+    className="w-56  "
+    src = {logo} 
     alt="logo" />
 
     {user && (

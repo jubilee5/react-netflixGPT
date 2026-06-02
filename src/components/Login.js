@@ -127,7 +127,7 @@ const Login = () => {
             className="p-4 my-6 bg-red-700 w-full rounded-lg" onClick={handleButtonClick}>{isSignInForm? "Sign In" : "Sign Up"}
      </button>
       <p className="py-4 cursor-pointer" 
-             onClick={toggleSignInForm}>{isSignInForm? "New User? Sign Up Now" : "Already Registered? Sign In Now"}
+             onClick={toggleSignInForm}>{isSignInForm? "New to MovieFlix? Sign Up Now" : "Already Registered? Sign In Now"}
         </p>
        <p className="fixed bottom-0 left-0 w-full bg-yellow-300 text-black text-center py-2 text-lg font-medium border-t-2 border-yellow-500 z-50">
            ⚠️ Educational Project Only. This website is not affiliated with, endorsed by, or associated with Netflix.
