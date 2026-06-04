@@ -1,9 +1,10 @@
 
 
-const VideoTitle = () => {
+const VideoTitle = ({ title, overview }) => {
   return (
     <div>
-      VideoTitle
+      <h1>{title}</h1>
+      <p>{overview}</p>
     </div>
   )
 }
