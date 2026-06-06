@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 //import { LOGO } from "../utils/constants";
 import logo from "../assets/logo.png";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -45,16 +46,25 @@ const Header = () => {
     };              //unsubscribe helps to remove the listener on unmount
   }, [dispatch, navigate]);
 
+  const handleGptSearchClick = () => {
+   dispatch(toggleGptSearchView());
+  }
+
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex  justify-between">  
     <img 
-    className="w-56  "
+    className="w-44  "
     src = {logo} 
     alt="logo" />
 
     {user && (
 
     <div className="flex p-2">
+      <button className="py-2 px-4 mx-4 my-4 bg-purple-800 text-white rounded-md"
+      onClick={handleGptSearchClick}
+      >
+        GPT Search
+      </button>
       <img
       className="w-12 h-12  cursor-pointer "
       alt="userIcon"

@@ -35,6 +35,7 @@
 - TMDB Image CDN URL
 - Made the Browse page good looking with Tailwind CSS
 - used custom hooks
+- GPT Search Feature
 
 
 
