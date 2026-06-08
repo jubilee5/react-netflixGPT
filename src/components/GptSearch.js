@@ -1,9 +1,11 @@
-
+import GptSearchBar from "./GptSearchBar";
+import GptMovieSuggestions from "./GptMovieSuggestions";
 
 const GptSearch = () => {
   return (
     <div>
-      GPT Search Component
+      <GptSearchBar/>
+      <GptMovieSuggestions/>
     </div>
   )
 }
