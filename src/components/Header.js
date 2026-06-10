@@ -9,6 +9,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 //import { LOGO } from "../utils/constants";
 import logo from "../assets/logo.png";
 import { toggleGptSearchView } from "../utils/gptSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -60,6 +61,13 @@ const Header = () => {
     {user && (
 
     <div className="flex p-2">
+    <select className="py-2 px-4 mx-4 my-4 bg-black text-white rounded-md">
+      {SUPPORTED_LANGUAGES.map((lang) => (
+        <option key={lang.identifier} value={lang.identifier}>{lang.name}
+        </option>
+      ))}
+     
+    </select>
       <button className="py-2 px-4 mx-4 my-4 bg-purple-800 text-white rounded-md"
       onClick={handleGptSearchClick}
       >

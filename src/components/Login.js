@@ -5,7 +5,7 @@ import {  createUserWithEmailAndPassword, signInWithEmailAndPassword , updatePro
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
 
 
 const Login = () => {
@@ -92,7 +92,7 @@ const Login = () => {
 
       <img
         className="w-screen h-screen object-cover"
-        src= "https://assets.nflxext.com/ffe/siteui/vlv3/435e8bb8-7f1b-49cb-8da8-bff997124294/web/IN-en-20260511-TRIFECTA-perspective_ec39852e-0b48-4e8a-b415-dd8376cd83ce_large.jpg" alt="background"
+        src= {BG_URL} alt="background"
         />
       </div>
       <form onSubmit={(e) => e.preventDefault()}  //e.preventDefault() is used to prevent the default form submission behavior. 

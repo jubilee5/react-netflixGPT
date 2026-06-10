@@ -8,7 +8,7 @@ const GptSearchBar = () => {
         type="text" 
         className=" p-4 m-4 col-span-9"
         placeholder="Search for movies, TV shows, genres..."/>
-        <button className="col-span-3 m-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+        <button className="col-span-3 m-4 bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded">Search</button>
         </form>
     </div>
   )
