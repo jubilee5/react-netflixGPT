@@ -51,6 +51,10 @@ const Header = () => {
    dispatch(toggleGptSearchView());
   }
 
+  const handleLanguageChange = (e) => {
+   dispatch
+  }
+
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex  justify-between">  
     <img 
@@ -61,7 +65,7 @@ const Header = () => {
     {user && (
 
     <div className="flex p-2">
-    <select className="py-2 px-4 mx-4 my-4 bg-black text-white rounded-md">
+    <select className="py-2 px-4 mx-4 my-4 bg-black text-white rounded-md" onChange={handleLanguageChange}>
       {SUPPORTED_LANGUAGES.map((lang) => (
         <option key={lang.identifier} value={lang.identifier}>{lang.name}
         </option>
