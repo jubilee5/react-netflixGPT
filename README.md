@@ -35,7 +35,10 @@
 - TMDB Image CDN URL
 - Made the Browse page good looking with Tailwind CSS
 - used custom hooks
-- GPT Search Feature
+- GPT Search Page
+- GPT Search Bar
+- (Bonus) Multi-language Feature in our App
+
 
 
 
