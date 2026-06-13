@@ -3,6 +3,8 @@ import { OPENAI_KEY } from "./constants";
 
 const openai = new OpenAI({
     apiKey: OPENAI_KEY, //default is process.env.OPENAI_API_KEY
+    dangerouslyAllowBrowser: true
+
 });
 
 export default openai;
