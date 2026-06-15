@@ -7,6 +7,8 @@ const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
 
+  // search movies in TMDB
+
   const handleGptSearchClick = async() => {
   
     console.log(searchText.current.value);
@@ -15,13 +17,13 @@ const GptSearchBar = () => {
     const gptQuery = "Act as a Movie Search Bot and search for " + searchText.current.value + " . Only give me names of 5 movies, comma separated like the example result. Example Result: The Shawshank Redemption, The Godfather, The Dark Knight, Pulp Fiction, Schindler's List";
 
 //     const gptResults = await openai.chat.completions.create({
-//   model: 'gpt-3.5-turbo',
+//   model: 'gpt-4o-mini',
 //   messages: [
 //     { role: 'user', content: gptQuery },
 //   ],
 // });
 
-// using mock data until i get the openai billing working 
+// using mock data until I get the openai billing set up 
 const gptResults = {
   choices: [
     {
@@ -33,7 +35,16 @@ const gptResults = {
   ],
 };
 
-    console.log(gptResults.choices);
+if (!gptResults.choices){
+  alert(lang[langKey].gptNoResults);
+  return;
+}
+
+    console.log(gptResults.choices?.[0]?.message?.content);
+
+    const gptMovies = gptResults.choices?.[0]?.message?.content.split(",")
+
+    // for each movie, fetch its details from TMDB API and add to the store
   }
 
   return (
