@@ -96,7 +96,7 @@ const Login = () => {
         />
       </div>
       <form onSubmit={(e) => e.preventDefault()}  //e.preventDefault() is used to prevent the default form submission behavior. 
-      className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-75">
+      className="w-11/12 md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-75">
       <h1 className="font-bold text-3xl py-4">
         {isSignInForm? "Sign In" : "Sign Up"}</h1>
         {!isSignInForm && (      //show fullname field only if the form is not Sign In
