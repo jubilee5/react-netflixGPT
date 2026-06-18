@@ -28,6 +28,7 @@ const useMoviesByGenre = (genreId, genreName) => {
 
   useEffect(() => {
     !movies[genreName] && getMovies();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 
