@@ -1,12 +1,14 @@
 // hooks/useMoviesByGenre.js
 
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constants";
 import { addGenreMovies } from "../utils/moviesSlice";
 
 const useMoviesByGenre = (genreId, genreName) => {
   const dispatch = useDispatch();
+
+   const movies = useSelector((store) => store.movies.genreMovies);
 
   const getMovies = async () => {
     const data = await fetch(
@@ -25,7 +27,7 @@ const useMoviesByGenre = (genreId, genreName) => {
   };
 
   useEffect(() => {
-    getMovies();
+    !movies[genreName] && getMovies();
   }, []);
 };
 
