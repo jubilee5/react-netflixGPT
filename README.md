@@ -38,6 +38,12 @@
 - GPT Search Page
 - GPT Search Bar
 - (Bonus) Multi-language Feature in our App
+- Get OpenAI API Call
+- fetched gpt MovieSuggestions from TMDB
+- created gptSlice Added data
+- Reused Movie List component to make movie suggestion container
+- Memoization
+- Made our side responsive
 
 
 
