@@ -1,5 +1,11 @@
 # NetflixGPT
 
+
+## Live Demo
+🔗 https://react-netflix-gpt-five.vercel.app
+
+A Netflix-inspired movie recommendation platform built with React, Redux, Firebase Authentication, TMDB API, and OpenAI integration.
+
 - Create React App
 - Configured TailwindCSS
 - Header
