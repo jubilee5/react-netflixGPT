@@ -68,17 +68,17 @@ if (!gptResults.choices){
   }
 
   return (
-    <div className='pt-[40%]  md:pt-[10%] flex justify-center'>
-      <form className="w-full md:w-1/2 bg-black grid grid-cols-12"
+    <div className='pt-[180px] md:pt-[120px] flex justify-center px-4'>
+      <form className="w-full md:w-1/2 bg-black rounded-lg p-2 flex flex-col md:grid md:grid-cols-12 gap-2"
       onSubmit={(e)=> e.preventDefault()}
       >
         <input 
         type="text" 
-        className=" p-4 m-4 col-span-9"
+        className="p-3 md:p-4 col-span-9 text-sm md:text-base"
         placeholder={lang[langKey].gptSearchPlaceholder}
         ref={searchText}
         />
-        <button className="col-span-3 m-4 bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
+        <button className="col-span-3 bg-red-700 hover:bg-red-900 text-white font-bold py-3 px-4 rounded"
         onClick={handleGptSearchClick}
         >
             {lang[langKey].search}</button>
